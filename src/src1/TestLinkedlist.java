@@ -49,19 +49,16 @@ public class TestLinkedlist {
 		Node temp;
 		temp = head;
 		System.out.println("Detection of Circular Linked List");
-		while ((temp.getNext() != head) || (temp.getNext() != null)) {
+		while ((temp.getNext() != null)) {
 			if (temp.getNext() == head) {
 				System.out.println("This is Circular Linked List");
 				return;
 			}
-
-			if (temp.getNext() == null) {
-				System.out.println("This is not Circular Linked List");
-				return;
-			}
 			temp = temp.getNext();
 		}
-
+		if (temp.getNext() == null) {
+			System.out.println("This is not Circular Linked List");
+			return;
+		}
 	}
-
 };
