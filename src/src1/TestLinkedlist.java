@@ -32,6 +32,8 @@ public class TestLinkedlist {
 		// Displays second last element of the linked list
 		System.out.println("Second last element is:");
 		new TestLinkedlist().getSecondLastNode(head);
+
+		new TestLinkedlist().isCircularLinkedList(head);
 	}
 
 	private void getSecondLastNode(Node head) {
@@ -42,4 +44,21 @@ public class TestLinkedlist {
 		}
 		System.out.println(current.getData());
 	}
-}
+
+	private void isCircularLinkedList(Node head) {
+		Node temp;
+		temp = head;
+		System.out.println("Detection of Circular Linked List");
+		while ((temp.getNext() != null)) {
+			if (temp.getNext() == head) {
+				System.out.println("This is Circular Linked List");
+				return;
+			}
+			temp = temp.getNext();
+		}
+		if (temp.getNext() == null) {
+			System.out.println("This is not Circular Linked List");
+			return;
+		}
+	}
+};
